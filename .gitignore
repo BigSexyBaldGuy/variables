@@ -1,0 +1,13 @@
+/variables/.idea/.gitignore
+/variables/out/production/variables/expressions/Addition.class
+/variables/out/production/variables/expressions/Division.class
+/variables/out/production/variables/expressions/Expression.class
+/variables/out/production/variables/expressions/Integer.class
+/variables/.idea/misc.xml
+/variables/.idea/modules.xml
+/variables/out/production/variables/expressions/Multiplication.class
+/variables/out/production/variables/expressions/Parentheses.class
+/variables/out/production/variables/expressions/Parse.class
+/variables/out/production/variables/expressions/Subtraction.class
+/variables/variables.iml
+/variables/.idea/vcs.xml
