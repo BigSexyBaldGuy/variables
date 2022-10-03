@@ -63,6 +63,37 @@ public class    Expression
              *  We know it's not an integer.
              */
 
+			//---------------------------------------------------------
+			// 1 - ToDo: Remove these comments. They are temporary to
+			//     ToDo: help code the requirements.
+			// 1- Modify the Expression class to accept a token
+			// beginning with a letter
+			//---------------------------------------------------------
+			if (Character.isAlphabetic(nextToken.charAt(0)) == true) {
+				/*
+				 *  The parser guarantees that if the token starts
+				 *  with an alphabetic character, it must only
+				 *  contain letters and numbers. So, instantiate
+				 *  a variable operand and push it on the stack to
+				 *  save it until an operation tells us what to do
+				 *  with it.
+				 */
+
+				//------------------------------------------------------
+				// (1a) - ToDo: Remove these comments. They are
+				//        ToDo: temporary to help code the requirements.
+				// (1a) as a variable by getting an instance of the
+				// Variable class named after the token.
+				//------------------------------------------------------
+				Variable variable = Variable.get(nextToken);
+
+
+				pendingOperands.push(variable);
+
+				// pendingOperands.push(new Variable(nextToken));
+				continue;
+			}
+
 			/*
 			 *  Let's see if we can construct an expression from
 			 *  what we've seen so far.
@@ -340,62 +371,9 @@ public class    Expression
          *  following at the same index.
          */
         String          toTest[]    = {
-                    "1",
-                    "1 + 2",
-                    "1 + 2 + 3",
-                    "1 2",
-                    "1 + + 2",
-                    "+",
-                    "+ 1",
-                    "1 + ",
-                    "1 + 2 +",
-                    "1 + 2 + 3 +",
-                    "2 - 1",
-                    "3 - 2 - 1",
-                    "3 + 2 - 1",
-                    "3 - 2 + 1",
-                    "1 - - 2",
-                    "-",
-                    "- 1",
-                    "1 - ",
-                    "2 - 1 -",
-                    "3 - 2 - 1 -",
-                    "2 * 3",
-                    "2 * 3 * 4",
-                    "3 + 2 - 1 * 4",
-                    "4 * 3 - 2 + 1",
-                    "1 * * 2",
-                    "*",
-                    "* 1",
-                    "1 * ",
-                    "2 * 1 *",
-                    "3 * 2 * 1 *",
-                    "10 / 2",
-                    "10 / 2 / 2",
-                    "3 + 2 - 1 * 4 / 2",
-                    "12 / 4 * 3 - 2 + 1",
-                    "1 / / 2",
-                    "/",
-                    "/ 1",
-                    "1 / ",
-                    "2 / 1 /",
-                    "3 / 2 / 1 /",
-                    "(1)",
-                    "((1))",
-                    "10 + (3 - 2)",
-                    "10 + ((3 - 2) - 1)",
-                    "10 + (3 - (2 - 1))",
-                    "(10 + 3) - (2 - 1)",
-                    "(10 + (3 - 2) - 1)",
-                    "(10 + (3 - 2)) - 1",
-                    "10 + (3 * 2)",
-                    "(",
-                    ")",
-                    "(1",
-                    ")1",
-                    "1(",
-                    "1)",
-                    "(1 2)",
+					"6 + 5",
+					"X + 5",
+					"X + 7",
                 };
         /*
          *  The items in this array are the results of evaluating the
@@ -403,62 +381,9 @@ public class    Expression
          *  previous array.  A -99 value means we expect an exception.
          */
         int             results[]   = {
-                    1,
-                    3,
-                    6,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    1,
-                    0,
-                    4,
-                    2,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    6,
-                    24,
-                    1,
-                    11,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    5,
-                    2,
-                    3,
-                    8,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    1,
-                    1,
-                    11,
-                    10,
-                    12,
-                    12,
-                    10,
-                    10,
-                    16,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
-                    -99,
+					11,
+					93,
+					95,
                 };
 
 
